@@ -1,0 +1,5 @@
+{
+  "APP_NAME": "The Wire Character Viewer",
+  "BUNDLE_NAME": "com.sample.wireviewer",
+  "API_URL": "http://api.duckduckgo.com/?q=the+wire+characters&format=json"
+}

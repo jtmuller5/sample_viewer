@@ -1,0 +1,5 @@
+{
+  "APP_NAME": "Simpsons Character Viewer",
+  "BUNDLE_NAME": "com.sample.simpsonsviewer",
+  "API_URL": "http://api.duckduckgo.com/?q=simpsons+characters&format=json"
+}
