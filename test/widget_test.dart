@@ -9,8 +9,6 @@ import 'package:sample_viewer/item_details/item_details_view.dart';
 import 'package:sample_viewer/item_list/item_list_view.dart';
 import 'package:sample_viewer/item_list/search_bar.dart';
 
-import 'package:sample_viewer/main.dart';
-
 import 'test_data.dart';
 import 'unit_tests.dart';
 
