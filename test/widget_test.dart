@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide SearchBar;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
@@ -7,6 +7,7 @@ import 'package:sample_viewer/api_service.dart';
 import 'package:sample_viewer/item_details/character_image.dart';
 import 'package:sample_viewer/item_details/item_details_view.dart';
 import 'package:sample_viewer/item_list/item_list_view.dart';
+import 'package:sample_viewer/item_list/search_bar.dart';
 
 import 'package:sample_viewer/main.dart';
 
@@ -61,6 +62,15 @@ void main() {
       when(() => GetIt.instance.get<Client>().get(Uri.parse(testUrl))).thenAnswer(
             (realInvocation) async => Response(testResponse, 200),
       );
+    });
+
+    testWidgets('Typing in the search bar updates the search term in the ApiService', (tester) async {
+      await tester.pumpWidget(TestingWrapper(SearchBar()));
+
+      Finder searchBar = find.byType(TextField);
+      await tester.enterText(searchBar, 'apu');
+
+      expect(GetIt.instance.get<ApiService>().searchTerm.value, 'apu');
     });
 
     testWidgets('All characters are shown on list page', (WidgetTester tester) async {
