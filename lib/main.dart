@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:http/http.dart';
 import 'package:sample_viewer/item_details/item_details_view.dart';
 import 'package:sample_viewer/item_list/item_list_view.dart';
 
@@ -11,6 +12,7 @@ double largeBreakpoint = 600;
 
 void main() {
 
+  getIt.registerSingleton<Client>(Client());
   getIt.registerSingleton<ApiService>(ApiService());
   runApp(const MyApp());
 }
